@@ -1,0 +1,80 @@
+
+.navbar {
+    
+    background-image:  url(background.jpg);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.card {
+    border: 6px solid rgb(255, 200, 0);
+    border-radius: 40px;
+    background-color:blue;
+}
+
+.jumbotron {
+    padding: 20px;
+    background-image: url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/shiny/802.gif);
+    
+}
+
+
+
+.move_btn {
+    background-color: rgb(255, 255, 0);
+    color: black;
+    border-color: brown;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.card-dragon {
+    border: 2px solid red;
+    background-image: linear-gradient(blue, red);
+    border-radius: 5px;
+}
+
+.card-flying {
+    border: 2px solid rgb(80, 80, 79);
+    background-image: linear-gradient(rgb(0, 132, 255), rgb(100, 100, 100));
+    border-radius: 5px;
+}
+
+.card-psychic{
+    border: 2px solid rgb(212, 0, 255);
+    background-image: linear-gradient(rgb(256, 0, 255), rgb(156, 8, 173));
+    border-radius: 5px;
+}
+
+.card-electric {
+    border: 2px solid rgb(255, 255, 0);
+    background-image: linear-gradient(rgb(255, 255, 0), rgb(255, 153, 0));
+    border-radius: 5px;
+}
+
+.card-dark {
+    border: 2px solid rgb(72, 54, 93);
+    background-image: linear-gradient(rgb(57, 50, 94), rgb(74, 74, 74));
+    border-radius: 5px;
+}
+
+.card-title {
+    border-radius: 5px;
+}
+
+.abilities {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 10px;
+    border: 2px solid rgb(7, 25, 181);
+    border-radius: 10px;
+    background-image: linear-gradient(rgb(63, 63, 169), blue)
+}
+
+.list-group-flush {
+    border-color: rgb(18, 18, 124);
+    border-radius: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.list-group-flush:hover {
+    color: rgb(190, 46, 222);
+}

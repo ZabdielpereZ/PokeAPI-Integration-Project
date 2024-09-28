@@ -38,16 +38,19 @@
               <p class="lead display-7" style="color: gold;"><b>What Pokemon are you searching for?</b></p>
               <!-- Pokemon search form with button -->
               <form id="pokemonSearch" onsubmit="handleSubmit(event)">
-                <input type="text" class="form-control text-center" id="pokemonInput" placeholder="Enter a Pokémon name">
+                <input type="text" class="form-control text-center" id="pokemonInput" placeholder="Enter a Pokémon name or ID">
                 <button type="submit" class="move_btn btn btn-primary">Search</button>
               </form>
+              <!-- Pokemon displayed -->
+              <div id="pokemonInfo">
+              </div>
             </div>
           </div>
           <!-- Card -->
           <div class="card-group">
             <div class="card p-3">
               <h5 class="card-title text-dark bg-warning w-50 text-center">Zapdos</h5>
-              <p>Lvl 98</p>
+              <p class="text-light">Lvl 98</p>
               <!-- Progress Bar -->
               <div class="progress">
                 <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
@@ -79,7 +82,7 @@
             </div>
             <div class="card p-3">
               <h5 class="card-title text-dark bg-warning w-50 text-center">Pikachu</h5>
-              <p>Lvl 98</p>
+              <p class="text-light">Lvl 98</p>
               <!-- Progress Bar -->
               <div class="progress">
                 <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
@@ -99,7 +102,7 @@
             </div>
             <div class="card p-3">
               <h5 class="card-title text-dark bg-warning w-50 text-center">Darkrai</h5>
-              <p>Lvl 98</p>
+              <p class="text-light">Lvl 98</p>
               <!-- Progress Bar -->
               <div class="progress">
                 <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
@@ -119,7 +122,7 @@
             </div>
             <div class="card p-3">
               <h5 class="card-title text-dark bg-warning w-50 text-center">Mew</h5>
-              <p>Lvl 98</p>
+              <p class="text-light">Lvl 98</p>
               <!-- Progress Bar-->
               <div class="progress">
                 <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
@@ -139,7 +142,7 @@
             </div>
             <div class="card p-3">
               <h5 class="card-title text-dark bg-warning w-50 text-center">Rayquaza</h5>
-              <p>Lvl 98</p>
+              <p class="text-light">Lvl 98</p>
               <!-- Progress Bar -->
               <div class="progress">
                 <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
@@ -173,7 +176,7 @@
                         <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
                            <div class="toast-header">
                                 <img src="charizard.png" width="150" height="150" class="rounded me-2" alt="bear logo">
-                                    <strong class="me-auto">Welcome to Pokedex</strong>
+                                    <strong class="me-auto">Type: Fire</strong>
                                     <small>1 mins ago</small>
                                     <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                              </div>
@@ -192,8 +195,6 @@
                       </script>
                     </div>
                         <div class="p-2 bd-highlight text-light text-center">Pokemon</div>
-                        <div class="p-2 bd-highlight text-light text-center">Pokemon</div>
-                        <div class="p-2 bd-highlight text-light text-center">Pokemon</div>
                       </div>
                       <div class="d-flex bd-highlight">
                         <div class="p-2 bd-highlight"></div>
@@ -201,13 +202,10 @@
                         <div class="p-2 bd-highlight"></div>
                       </div>
                   </div>
-                  <!-- logo -->
-                  <div class=" main-content col-sm-8 p-3">
-                    <h4 class="text-center text-decoration-underline text-light"></a>
-                      <br><br></h4>
+                  <!-- Main container -->
+                  <div class="col-sm-8 p-3">
                     <div>
-                        <ul>
-                            <h5 class="text-light">Legendary Pokemon:</h5>
+                            <h5 class="text-light text-center"><b>Legendary/Mythical Pokemon:</b></h5>
                             <!-- Carousel -->
 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
@@ -219,30 +217,30 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/145.gif" class="d-block w-100" alt="">
-      <div class="carousel-caption d-none d-md-block text-light">
+      <div class="carousel-caption d-none d-md-block text-light" style="height: 100px;">
         <h5>Zapdos</h5>
-        <p>Pokemon</p>
+        <p><b>is a legendary bird Pokémon that has the ability to control electricity. It usually lives in thunderclouds. It gains power if it is stricken by lightning bolts.</b></p>
       </div>
     </div>
     <div class="carousel-item">
       <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/491.gif" class="d-block w-100" alt="">
       <div class="carousel-caption d-none d-md-block text-light">
         <h5>Darkrai</h5>
-        <p>Pokemon</p>
+        <p><b>is a black, shadow-like Pokémon. It has a small head with a white fog-like ghostly plume billowing from its head covering one of its bright blue eyes, with the portion on its face resembling hair. It also has a red spiky growth around its neck.</b></p>
       </div>
     </div>
     <div class="carousel-item">
       <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/151.gif" class="d-block w-100" alt="">
       <div class="carousel-caption d-none d-md-block text-light">
         <h5>Mew</h5>
-        <p>Pokemon</p>
+        <p><b>is said to possess the genetic composition of all Pokémon. It is capable of making itself invisible at will, so it entirely avoids notice even if it approaches people. A Pokémon of South America that was thought to have been extinct. It is very intelligent and learns any move.</b></p>
       </div>
     </div>
     <div class="carousel-item">
       <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/shiny/384.gif" class="d-block w-100" alt="">
       <div class="carousel-caption d-none d-md-block text-light">
         <h5>Rayquaza</h5>
-        <p>Pokemon</p>
+        <p><b>is a dual-type Dragon/Flying Legendary Pokémon introduced in Generation III. While it is not known to evolve into or from any other Pokémon, Rayquaza can Mega Evolve into Mega Rayquaza if it knows Dragon Ascent, but only if it is not holding a Z-Crystal.</b></p>
       </div>
     </div>
   </div>
@@ -272,8 +270,8 @@
                 <div class="row">
                   <div class="col">
                     <img class="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/female/3.gif" class="shiny pokemon" alt="pokemon" width="250px" height="150px">
-                    <h1 class="text-center">Pokemon Battle</h1><br>
-                    <h3 class="text-center">Pokemon</h3>
+                    <h1 class="text-center text-warning">Pokemon Battle</h1><br>
+                    <h3 class="text-center text-warning">Pokemon</h3>
                   </div>
                 </div>
               </div>

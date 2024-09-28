@@ -7,7 +7,7 @@
 
 .card {
     border: 6px solid rgb(255, 200, 0);
-    border-radius: 40px;
+    border-radius: 50px;
     background-color:blue;
 }
 
@@ -65,7 +65,7 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin-top: 10px;
     border: 2px solid rgb(7, 25, 181);
-    border-radius: 10px;
+    border-radius: 50px;
     background-image: linear-gradient(rgb(63, 63, 169), blue)
 }
 
@@ -78,3 +78,4 @@
 .list-group-flush:hover {
     color: rgb(190, 46, 222);
 }
+

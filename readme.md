@@ -1,3 +1,74 @@
+# Mini Project: PokeAPI Integration Project
+
+**In this PokeAPI Integration project, you'll develop a web application that seamlessly integrates with the PokeAPI, providing users with an immersive experience into the world of Pokémon. Leveraging HTML, Bootstrap, CSS, and Asychronous JavaScript, you'll create a dynamic and interactive platform for exploring Pokémon data and information.**
+
+## Project Requirements
+
+**Homepage:
+Design a visually appealing landing page with Bootstrap components and custom CSS styles.
+Implement responsive design principles to ensure compatibility across various devices and screen sizes.**
+
+**Pokémon Search Page:
+Create a search page where users can enter a Pokémon's name or ID to retrieve relevant information.
+Utilize JavaScript asynchronous functions to fetch data from the PokeAPI and dynamically update the webpage content based on user input.**
+
+**Pokémon Details Page:
+Develop a details page that displays comprehensive information about a specific Pokémon, including its abilities, types, stats, and image.
+You can do this with cards, carousels, tables, and/or accordions with Bootstrap. 
+Apply CSS styling to enhance the presentation of Pokémon details and ensure readability.**
+
+### Start by creating a new HTML page name it index.html
+
+#### use command bs5-$
+**You should see the following**
+
+```
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <header>
+      <!-- place navbar here -->
+    </header>
+    <main></main>
+    <footer>
+      <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+```
+#### From here we can add navbar, containers, forms and buttons to make a visually appealing home page, with search function.
+
+```
 <!doctype html>
 <!doctype html>
 <html lang="en">
@@ -31,6 +102,31 @@
               </nav>
         </header>
         <main class="bg-dark">
+```
+#### In this Jumbotron we are adding pokemon search form and the container displaying PokeAPI data.
+
++ **We start by ctreating a form and giving it an id and an onSubmit event handler to call a function when the form is submitted**
++ **Then we add the input button we and an id with a placeholder "Enter a pokemon name or ID"**
++ **Next we add the input button**
++ **And finally we add the container to display PokeAPI data**
+  
+#### Example of our form:
+```
+<!-- Pokemon search form with button -->
+<form id="pokemonSearch" 
+onsubmit="handleSubmit(event)">
+<input type="text" class="form-control 
+text-center" id="pokemonInput" 
+placeholder="Enter a Pokémon name or ID">
+<button type="submit" 
+class="move_btn btn btn-primary">Search</button>
+</form>
+<!-- Pokemon displayed -->
+<div id="pokemonInfo">
+</div>
+```
+
+```
           <!-- jumbotron -->
           <div class="jumbotron jumbotron-fluid bg-dark text-light text-center">
             <div class="container">
@@ -46,6 +142,56 @@
               </div>
             </div>
           </div>
+```
+####  From here we utilize javaScript to handle onSubmit function. 
+```
+// function to handle onSubmit
+function handleSubmit(event) {
+    event.preventDefault();
+
+    // Get pokemon value log in console
+    const pokemonInput = document.getElementById("pokemonInput").value
+    console.log("https://pokeapi.co/api/v2/pokemon/", pokemonInput);
+    pokemonSearch(pokemonInput);
+}
+```
+####  From here we utilize javaScript asynchronous functions to fetch data from the PokeAPI map items then display data.
+```
+// Fetch data from API with try and catch
+const pokemonSearch = async (pokemon) => {
+    try{
+       const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+       const pokeData = await res.json();
+       // console.log(data);
+        
+     // create function to callback this function
+     // Display pokemon details
+       const pokeInfo = document.getElementById('pokemonInfo');
+
+       pokeInfo.innerHTML = `
+        <h2>${pokeData.name}</h2>
+        <img src="${pokeData.sprites.front_default}" alt="${pokemon.name}">
+        <h3>Abilities</h3>
+        <ul>${pokeData.abilities.map(a => `<li>${a.ability.name}</li>`).join("")}
+        </ul>
+        <h3>Base Experience</h3>
+        <p>${pokeData.base_experience}</p>
+
+      
+        <h3>Sounds:</h3>
+        <audio src="${pokeData.cries.latest}" controls></audio>
+        <audio src="${pokeData.cries.legacy}" controls></audio>
+        `
+ 
+    } catch{
+        console.log(`Error fetching from API ${pokemon}`);
+    }
+   
+}
+```
+
+
+```
           <!-- Card -->
           <div class="card-group">
             <div class="card p-3">
@@ -287,3 +433,5 @@
             
     </body>
 </html>
+```
+
